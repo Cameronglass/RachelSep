@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Rachel Sepulveda | Available for interior design, art curation, and model unit projects.">
+  <title>Contact | Rachel Sepulveda</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="site-nav" role="navigation">
+    <a class="nav-logo" href="index.html">RACHEL <span>SEP</span></a>
+    <ul class="nav-links">
+      <li><a href="art.html">CURATION</a></li>
+      <li><a href="hand-drawn.html">HAND-DRAWN</a></li>
+      <li><a href="models.html">MODELS</a></li>
+      <li><a href="commercial.html">COMMERCIAL</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="contact.html" class="active">CONTACT</a></li>
+    </ul>
+    <button class="nav-menu-btn" aria-label="Open menu" aria-expanded="false">MENU</button>
+  </nav>
+
+  <div class="nav-mobile-overlay" role="dialog" aria-label="Navigation menu">
+    <button class="nav-close-btn" aria-label="Close menu">CLOSE</button>
+    <a href="art.html">CURATION</a>
+    <a href="hand-drawn.html">HAND-DRAWN</a>
+    <a href="models.html">MODELS</a>
+    <a href="commercial.html">COMMERCIAL</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+
+  <main>
+
+    <section class="contact-section" style="padding-top: calc(var(--nav-h) + var(--pad-section));">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Info column -->
+          <div class="contact-info">
+            <span class="page-label fade-up" style="font-family:var(--ff-script);font-style:italic;font-weight:500;font-size:clamp(20px, 1.8vw, 26px);letter-spacing:.01em;color:var(--green-accent);display:block;margin-bottom:6px;">GET IN TOUCH</span>
+            <h2 class="fade-up" style="transition-delay:.06s">LET'S<br>BUILD<br>SOMETHING.</h2>
+            <p class="fade-up" style="transition-delay:.12s">
+              Whether you're a developer looking to differentiate a model unit, a homeowner
+              seeking a transformative redesign, or a collector,
+              Rachel would love to hear about your project.
+            </p>
+
+            <div class="contact-detail fade-up" style="transition-delay:.18s">
+              <span class="detail-label">LOCATION</span>
+              <span class="detail-value">Maryland · Available nationwide</span>
+            </div>
+            <div class="contact-detail fade-up" style="transition-delay:.22s">
+              <span class="detail-label">AVAILABILITY</span>
+              <span class="detail-value">Currently accepting new projects</span>
+            </div>
+            <div class="contact-detail fade-up" style="transition-delay:.26s">
+              <span class="detail-label">SPECIALTIES</span>
+              <span class="detail-value">Model Units · Art Curation · Residential Design</span>
+            </div>
+
+            <div class="fade-up" style="transition-delay:.3s;margin-top:48px;">
+              <a class="link-underline" href="models.html">VIEW PORTFOLIO →</a>
+            </div>
+          </div>
+
+          <!-- Form column -->
+          <div class="contact-form fade-up" style="transition-delay:.1s">
+            <form id="contact-form" action="https://formspree.io/f/xnjllodq" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="New inquiry from rachelsep.com">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">FIRST NAME</label>
+                  <input type="text" id="first-name" name="first-name" placeholder="Jane" required>
+                </div>
+                <div class="form-group">
+                  <label for="last-name">LAST NAME</label>
+                  <input type="text" id="last-name" name="last-name" placeholder="Smith" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">EMAIL ADDRESS</label>
+                <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="project-type">PROJECT TYPE</label>
+                <select id="project-type" name="project-type">
+                  <option value="" disabled selected>Select a service…</option>
+                  <option value="model-unit">Model Unit Design</option>
+                  <option value="residential">Residential Interior Design</option>
+                  <option value="art-curation">Art Curation</option>
+                  <option value="art-consultation">Art Consultation</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">YOUR MESSAGE</label>
+                <textarea id="message" name="message" placeholder="Tell me about your project, timeline, and vision…" required></textarea>
+              </div>
+
+              <div class="form-submit">
+                <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+                  SEND MESSAGE →
+                </button>
+              </div>
+            </form>
+            <div class="form-success" role="status">
+              Thank you. Message received. Rachel will be in touch shortly.
+            </div>
+            <div class="form-error" role="alert">
+              Something went wrong. Please try again or email rachel directly.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="quote-banner" style="margin-top: var(--pad-section);">
+      <p>EVERY GREAT SPACE BEGINS WITH A CONVERSATION.</p>
+    </div>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo">RACHEL <span>SEP</span></span>
+          <p>DESIGNER. CURATOR. ART EXPERT.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="models.html">WORK</a>
+          <a href="art.html">CURATION</a>
+    <a href="hand-drawn.html">HAND-DRAWN</a>
+          <a href="commercial.html">COMMERCIAL</a>
+          <a href="about.html">ABOUT</a>
+          <a href="contact.html">CONTACT</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Rachel Sepulveda. All rights reserved.</p>
+        <p class="footer-tagline">Creating spaces that tell stories.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

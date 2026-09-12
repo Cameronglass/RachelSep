@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+  SANITY_STUDIO_PROJECT_ID = "4jmyx4hk"
+  SANITY_STUDIO_DATASET = "production"
+
+# The editor is hosted separately by Sanity; the public site contains no
+# write credentials or admin API. Set the real Studio URL after deployment.

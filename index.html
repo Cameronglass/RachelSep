@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rachel Sepulveda | Interior Design & Art Curation. Creating spaces that tell stories. Based in Maryland.">
+  <title>Rachel Sepulveda | Designer. Curator. Art Expert.</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────── -->
+  <nav class="site-nav" role="navigation">
+    <a class="nav-logo" href="index.html">RACHEL <span>SEP</span></a>
+    <ul class="nav-links">
+      <li><a href="art.html">CURATION</a></li>
+      <li><a href="hand-drawn.html">HAND-DRAWN</a></li>
+      <li><a href="models.html">MODELS</a></li>
+      <li><a href="commercial.html">COMMERCIAL</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+    <button class="nav-menu-btn" aria-label="Open menu" aria-expanded="false">MENU</button>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav-mobile-overlay" role="dialog" aria-label="Navigation menu">
+    <button class="nav-close-btn" aria-label="Close menu">CLOSE</button>
+    <a href="art.html">CURATION</a>
+    <a href="hand-drawn.html">HAND-DRAWN</a>
+    <a href="models.html">MODELS</a>
+    <a href="commercial.html">COMMERCIAL</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+
+  <main>
+
+    <!-- ── Hero: Editorial Diptych ───────────────────── -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-tagline">
+            <span class="hero-eyebrow">DESIGNER · CURATOR · ART EXPERT</span>
+            <h1 class="hero-title">
+              ART IS<br>WHERE<br>SPACE<br><em class="accent">BEGINS.</em>
+            </h1>
+            <a class="hero-cta" href="art.html">SEE THE CURATION →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-slides" aria-label="Featured curation">
+        <div class="hero-slide active">
+          <img src="images/westlake/art-3.png" alt="The Watt, Curated Art piece 3" loading="eager">
+        </div>
+        <div class="hero-slide">
+          <img src="images/westlake/art-6.png" alt="The Watt, Curated Art piece 6" loading="eager">
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── Stats Strip ──────────────────────────────── -->
+    <section class="home-stats" aria-label="By the numbers">
+      <div class="home-stats-inner">
+        <div class="home-stat">
+          <span class="num">75+</span>
+          <span class="label">Art Packages Curated</span>
+        </div>
+        <div class="home-stat">
+          <span class="num">50+</span>
+          <span class="label">On-Site Installations</span>
+        </div>
+        <div class="home-stat">
+          <span class="num">MD</span>
+          <span class="label">Maryland Based &amp; Beyond</span>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ── Signature Projects ─────────────────────────── -->
+    <section class="models-preview" aria-labelledby="models-heading">
+      <div class="models-preview-inner">
+        <div class="models-sidebar fade-up">
+          <span class="sig-label">SIGNATURE</span>
+          <h2 id="models-heading">PROJECTS</h2>
+          <p>Each space is a study in materials, mood, and meaning, designed to inspire how people live, work, and connect.</p>
+          <a class="link-underline" href="models.html">VIEW ALL PROJECTS</a>
+        </div>
+
+        <div class="models-grid-home">
+          <article class="model-card gallery-item fade-up" data-category="art curation" style="transition-delay:0.05s">
+            <img src="images/westlake/art-10.jpg" alt="The Watt curated art" loading="lazy">
+            <div class="model-card-overlay">
+              <span class="model-card-num">01</span>
+              <div class="model-card-name">THE WATT</div>
+              <a class="model-card-link" href="models/westlake.html">VIEW PROJECT</a>
+            </div>
+          </article>
+
+          <article class="model-card gallery-item fade-up" data-category="art curation" style="transition-delay:0.1s">
+            <img src="images/tortoise-one/art-1.jpg" alt="Tortoise One curated art" loading="lazy">
+            <div class="model-card-overlay">
+              <span class="model-card-num">02</span>
+              <div class="model-card-name">TORTOISE ONE</div>
+              <a class="model-card-link" href="models/tortoise-one.html">VIEW PROJECT</a>
+            </div>
+          </article>
+
+          <article class="model-card gallery-item fade-up" data-category="model" style="transition-delay:0.15s">
+            <img src="images/annandale/annandale-1.jpg" alt="Annandale Multifamily interior" loading="lazy">
+            <div class="model-card-overlay">
+              <span class="model-card-num">03</span>
+              <div class="model-card-name">ANNANDALE MULTIFAMILY</div>
+              <a class="model-card-link" href="models/annandale.html">VIEW PROJECT</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Quote Banner ──────────────────────────────── -->
+    <div class="quote-banner">
+      <p>I DON'T JUST DESIGN SPACES. I CURATE EXPERIENCES THAT LEAVE A LASTING IMPACT.</p>
+    </div>
+
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo">RACHEL <span>SEP</span></span>
+          <p>DESIGNER. CURATOR. ART EXPERT.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="models.html">WORK</a>
+          <a href="art.html">CURATION</a>
+    <a href="hand-drawn.html">HAND-DRAWN</a>
+          <a href="commercial.html">COMMERCIAL</a>
+          <a href="about.html">ABOUT</a>
+          <a href="contact.html">CONTACT</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Rachel Sepulveda. All rights reserved.</p>
+        <p class="footer-tagline">Creating spaces that tell stories.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
