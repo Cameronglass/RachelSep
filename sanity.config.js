@@ -2,10 +2,10 @@ import {defineConfig} from 'sanity';
 import {structureTool} from 'sanity/structure';
 import {schemaTypes} from './cms/schema.js';
 import {ProjectPreview} from './cms/ProjectPreview.jsx';
+import {websiteStructure} from './cms/structure.mjs';
 
 const projectId=process.env.SANITY_STUDIO_PROJECT_ID;
 if(!projectId) throw new Error('Add SANITY_STUDIO_PROJECT_ID to .env before opening the editor.');
-const pageNames={index:'Home',models:'Model homes',commercial:'Commercial spaces',art:'Art & curation','hand-drawn':'Hand-drawn artwork',about:'About',contact:'Contact'};
 
 export default defineConfig({
   name:'rachel-portfolio',
@@ -13,14 +13,7 @@ export default defineConfig({
   projectId,
   dataset:process.env.SANITY_STUDIO_DATASET || 'production',
   plugins:[structureTool({
-    structure:S=>S.list().title('Website content').items([
-      S.listItem().title('Model homes').child(S.documentTypeList('project').title('Model homes').filter('_type == "project" && kind == "model"').initialValueTemplates([S.initialValueTemplateItem('model-home')])),
-      S.listItem().title('Commercial spaces').child(S.documentTypeList('project').title('Commercial spaces').filter('_type == "project" && kind == "commercial"').initialValueTemplates([S.initialValueTemplateItem('commercial-space')])),
-      S.divider(),
-      ...Object.entries(pageNames).map(([route,title])=>S.listItem().title(title).child(S.document().schemaType('page').documentId(`page-${route}`).title(title))),
-      S.divider(),
-      S.listItem().title('Site settings').child(S.document().schemaType('siteSettings').documentId('site-settings')),
-    ]),
+    structure:websiteStructure,
     defaultDocumentNode:(S,{schemaType})=>S.document().views(schemaType==='project'?[S.view.form(),S.view.component(ProjectPreview).title('Preview')]:[S.view.form()]),
   })],
   schema:{types:schemaTypes,templates:previous=>[

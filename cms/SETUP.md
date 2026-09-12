@@ -135,6 +135,22 @@ With the local preview server running, `node cms/tests/browser.mjs` checks all
 21 desktop pages, six mobile layouts and the menu/gallery interactions in
 Chrome. Set `CHROME_PATH` if Chrome is installed somewhere else.
 
+The editor needs its own signed-in smoke test; public website checks do not
+exercise the Studio menu. `npm test` checks menu serialization and unique IDs.
+After `npm run studio:build`, run:
+
+```sh
+npx sanity exec cms/tests/studio.mjs --with-user-token -- chromium --local-assets
+npx playwright-core install webkit
+npx sanity exec cms/tests/studio.mjs --with-user-token -- webkit --local-assets
+```
+
+After deploying Studio, omit `--local-assets` to check the hosted bundles.
+These tests use a local HTML shell on the Studio origin to isolate it from
+Dashboard's separate login flow. They read real content with the CLI user's
+token in an ephemeral browser context; they do not modify documents or save
+credentials. Dashboard sign-in and embedding still require a manual check.
+
 The generated `dist/` is replaced only if it contains the builder’s marker.
 Its contents contain public pages and static assets, never `.env`, import
 scripts, source configuration, node_modules or Sanity write tokens.
