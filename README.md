@@ -4,6 +4,7 @@ A static interior design & art curation portfolio site, with a Sanity CMS
 integration for editing projects, photographs and page text.
 
 **CMS setup and current connection status:** see [cms/SETUP.md](cms/SETUP.md).
+**Everyday editing:** see [EDITING.md](EDITING.md).
 Run `npm run build:local` for an offline preview or `npm run build` for a
 connected build using published Sanity content. Netlify publishes `dist/`.
 The original HTML files below remain source templates and open independently.

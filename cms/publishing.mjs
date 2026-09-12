@@ -38,7 +38,7 @@ if(action==='connect') {
   const existing=await hooksApi();
   let hook=existing.find(h=>h.name===hookName);
   if(hook && hook.url!==buildHook.url) throw new Error('An existing Sanity hook has a different destination.');
-  if(!hook) hook=await hooksApi('POST','',{type:'document',name:hookName,description:'Rebuild rachelsep.com after published content changes.',url:buildHook.url,dataset:'production',apiVersion:'2026-09-01',httpMethod:'POST',includeDrafts:false,includeAllVersions:false,isDisabledByUser:false,rule:{on:['create','update','delete'],filter:'_type in ["project", "page", "siteSettings"]',projection:'{_id, _type, _rev}'}});
+  if(!hook) hook=await hooksApi('POST','',{type:'document',name:hookName,description:'Rebuild rachelsep.com after published content changes.',url:buildHook.url,dataset:'production',apiVersion:'v2025-02-19',httpMethod:'POST',includeDrafts:false,includeAllVersions:false,isDisabledByUser:false,rule:{on:['create','update','delete'],filter:'_type in ["project", "page", "siteSettings"]',projection:'{_id, _type, _rev}'}});
   console.log(JSON.stringify({netlifyHookId:buildHook.id,sanityHookId:hook.id,enabled:!hook.isDisabled,includeDrafts:hook.includeDrafts,rule:hook.rule}));
 } else if(action==='preview-build' || action==='production-build') {
   const build=netlify('createSiteBuild',{site_id:siteId,...(action==='preview-build'?{branch:'codex/sanity-cms'}:{}),title:'Verify Sanity content publishing'});

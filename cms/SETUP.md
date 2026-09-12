@@ -15,12 +15,22 @@ Sanity deduplicated identical files into 79 stored image assets.
 The authenticated editor is deployed at:
 https://rachelsep-4jmyx4hk.sanity.studio/
 
-The public website successfully builds all 21 pages from published Sanity
-content. Git has been initialized locally with a `main` branch. GitHub and
-Netlify authorizations are pending; no remote repository, automatic publishing
-hook or updated production Netlify deployment has been created yet. The
-existing live site is unchanged. The configured `/admin` redirect will become
-available after the next Netlify deployment.
+The source is in https://github.com/Cameronglass/RachelSep, preserving the
+repository's original history. The existing Netlify site serving rachelsep.com
+is connected to its `main` branch with build command `npm run build` and publish
+directory `dist`. Its site ID is `ee3e1d4e-ab70-4264-9a46-c341f0ae70ed`.
+
+The Sanity content webhook is configured for published create/update/delete
+events on projects, pages and site settings. Drafts and release versions do not
+trigger production builds. Its destination is held privately in Sanity and
+Netlify; no build-hook URL or credential is in this repository.
+
+The connected branch preview passed browser checks on all 21 pages and six
+mobile layouts. The deployed `/admin` redirect opens the authenticated editor.
+See [EDITING.md](../EDITING.md) for the everyday editing workflow.
+
+The previous manual production deploy was `6a5ce0feed3dbdfafe36acad`; it remains
+in Netlify's deploy history if a rollback is ever needed.
 
 ## One-time connection
 
@@ -142,3 +152,24 @@ Useful official references:
 - https://www.sanity.io/docs/studio/deployment
 - https://www.sanity.io/docs/content-lake/webhook-best-practices
 - https://docs.netlify.com/build/configure-builds/build-hooks/
+
+## Operational checks
+
+Run through the signed-in Sanity CLI so credentials stay in the CLI store:
+
+```sh
+npx sanity exec cms/publishing.mjs --with-user-token -- status
+npx sanity exec cms/publishing.mjs --with-user-token -- attempts
+```
+
+The helper also supports explicit setup actions (`connect`, `hooks`) and build
+actions (`preview-build`, `production-build`). `verify-publish` changes only
+the hidden settings title and tests a real content-change webhook. It starts a
+production build; it is not an offline test. All actions are scoped to this
+specific Sanity project, Netlify site and GitHub repository.
+
+To check a hosted deploy instead of localhost:
+
+```sh
+SITE_BASE_URL=https://rachelsep.com node cms/tests/browser.mjs
+```
