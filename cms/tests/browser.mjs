@@ -8,7 +8,7 @@ const browser=await chromium.launch({executablePath:process.env.CHROME_PATH || '
 const page=await browser.newPage({viewport:{width:1440,height:1000}});
 const errors=[];
 page.on('pageerror',error=>errors.push(error.message));
-page.on('response',response=>{if(response.url().startsWith('http://127.0.0.1:8080') && response.status()>=400) errors.push(`${response.status()} ${response.url()}`);});
+page.on('response',response=>{if((response.url().startsWith('http://127.0.0.1:8080') || response.url().startsWith('https://cdn.sanity.io/')) && response.status()>=400) errors.push(`${response.status()} ${response.url()}`);});
 const output=path.join(root,'.cms-checks');
 await mkdir(output,{recursive:true});
 async function screenshot(name) {

@@ -7,13 +7,20 @@ unique photographs from the existing site, then generates the same 21 public
 pages. The original HTML, CSS, JavaScript, photographs and contact form are
 preserved as source templates and as the offline migration source.
 
-Sanity project `4jmyx4hk` is now configured in the private local `.env` and the
-Netlify build configuration. Its public `production` dataset exists and was
-verified empty before import. Studio now compiles using the real project ID.
+Sanity project `4jmyx4hk`, public dataset `production`, is connected. All 22
+content documents (14 projects, 7 pages and site settings) are imported and
+passed Sanity document validation. All 84 source photo paths were uploaded;
+Sanity deduplicated identical files into 79 stored image assets.
 
-The content import, hosted editor, Git repository connection, Netlify build
-hook and production deployment are still pending. Sanity CLI sign-in on this
-Mac is required before uploading the content. GitHub CLI is also not signed in.
+The authenticated editor is deployed at:
+https://rachelsep-4jmyx4hk.sanity.studio/
+
+The public website successfully builds all 21 pages from published Sanity
+content. Git has been initialized locally with a `main` branch. GitHub and
+Netlify authorizations are pending; no remote repository, automatic publishing
+hook or updated production Netlify deployment has been created yet. The
+existing live site is unchanged. The configured `/admin` redirect will become
+available after the next Netlify deployment.
 
 ## One-time connection
 
@@ -41,8 +48,8 @@ Mac is required before uploading the content. GitHub CLI is also not signed in.
    `.env`. Run `npm run studio:deploy` to publish the authenticated editor at
    `https://YOUR-HOSTNAME.sanity.studio`. Rebuild using the real project ID.
 7. Connect this source folder to a Git repository and link that repository to
-   the existing Netlify site. Keep the existing domain. The current folder is
-   not a Git repository, and manual drag-and-drop uploads alone cannot run
+   the existing Netlify site. Keep the existing domain. The local repository is
+   initialized, and manual drag-and-drop uploads alone cannot run
    automatic content rebuilds. `.gitignore` excludes credentials, installed
    dependencies and generated output. The checked-in source needs the root
    HTML templates, `models/`, `css/`, `js/`, `images/`, `cms/`, package files,

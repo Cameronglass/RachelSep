@@ -56,6 +56,7 @@ export const schemaTypes=[
   ],preview:{select:{title:'name'}}},
   {name:'navItem',title:'Menu item',type:'object',fields:[string('label','Label',{validation:required}),string('path','Destination',{readOnly:true,hidden:true})],preview:{select:{title:'label'}}},
   {name:'siteSettings',title:'Site settings',type:'document',fields:[
+    string('title','Settings name',{hidden:true,readOnly:true}),
     string('brandFirst','Logo first word',{validation:required}),string('brandLast','Logo second word'),string('footerDescription','Footer description'),string('copyright','Copyright text'),string('tagline','Footer tagline'),
     array('navigation','Menu labels','navItem',{options:{disableActions:['add','remove','duplicate']}}),
   ],preview:{prepare:()=>({title:'Site settings'})}},

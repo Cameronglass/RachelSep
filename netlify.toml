@@ -7,5 +7,13 @@
   SANITY_STUDIO_PROJECT_ID = "4jmyx4hk"
   SANITY_STUDIO_DATASET = "production"
 
-# The editor is hosted separately by Sanity; the public site contains no
-# write credentials or admin API. Set the real Studio URL after deployment.
+# The editor handles authentication; no write credentials are in this site.
+[[redirects]]
+  from = "/admin"
+  to = "https://rachelsep-4jmyx4hk.sanity.studio/"
+  status = 302
+
+[[redirects]]
+  from = "/admin/*"
+  to = "https://rachelsep-4jmyx4hk.sanity.studio/"
+  status = 302
